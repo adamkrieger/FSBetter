@@ -10,7 +10,7 @@ let pickCheese id =
     Array.tryFind (fun item -> item.Id = id)
     >> function 
        | Some cheese -> printfn "%s" cheese.Name
-       | _           -> printfn "%s" "Completely out."
+       | None        -> printfn "%s" "Completely out."
  
 // id:string -> (Cheese[] -> unit)
 pickCheese "none" cheeses

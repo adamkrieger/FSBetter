@@ -1,4 +1,5 @@
-// csc /target:library 0.2_Maybe.csx -> 0.2_Maybe.dll
+// csc /target:library 0.2_Maybe.csx
+// This will create 0.2_Maybe.dll
 using System;
 using System.Linq;
 using System.Collections;
