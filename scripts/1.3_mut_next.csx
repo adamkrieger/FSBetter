@@ -7,9 +7,8 @@ public class ImmutString
     public readonly string Value;
 }
 
-Action<string> processValue = value => Console.WriteLine(value);
-
 var bucket = new ImmutString("Really Important Value");
+// Error: Readonly field cannot be assigned to.
 // bucket.Value = "Another Important Value";
 
-processValue(bucket.Value);
+Console.WriteLine(bucket.Value);

@@ -1,3 +1,3 @@
 string[] stringArray;
 
-Console.WriteLine(stringArray[0]);
+var length = stringArray.Length;
