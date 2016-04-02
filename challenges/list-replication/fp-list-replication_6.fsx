@@ -13,13 +13,13 @@ let doWhenNotNull f =
     | value -> Some (f value)
 
 let rec doAndRecurseOnValidInput f () =
-    let recurseUnlessNone = function
+    let recurseUntilNone = function
     | Some _ -> doAndRecurseOnValidInput f ()
     | None -> ()
     
     Console.ReadLine()
     |> doWhenNotNull f
-    |> recurseUnlessNone
+    |> recurseUntilNone
     
 let n = getN ()
 let print = printntimes n
