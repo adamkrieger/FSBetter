@@ -1,14 +1,24 @@
-public class ImmutString
+public class ImmutableItem
 {
-    public ImmutString(string value){
-        this.Value = value;
+    private ImmutableItem(){}
+    private ImmutableItem(decimal price){
+        this.Price = price;
     }
     
-    public readonly string Value;
+    public readonly decimal Price;
+    
+    public static ImmutableItem Create(decimal price){
+        return new ImmutableItem(price);
+    }
+    
+    public decimal WithTax(){
+        //Price *= 1.14M; <-- A readonly field cannot be assigned to
+        return Price * 1.14M;
+    }
 }
 
-var bucket = new ImmutString("Really Important Value");
-// Error: Readonly field cannot be assigned to.
-// bucket.Value = "Another Important Value";
+var shirt = ImmutableItem.Create(10.00M);
 
-Console.WriteLine(bucket.Value);
+var priceWithTax = shirt.WithTax();
+
+Console.WriteLine(priceWithTax);
