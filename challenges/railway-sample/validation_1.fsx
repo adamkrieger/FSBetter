@@ -1,7 +1,6 @@
-type Booking = {
-        Id: int;
-        Destination: string
-    }
+type Booking = { Id: int;
+                 Destination: string
+               }
     
 let idNotZero booking = 
     match booking.Id with
